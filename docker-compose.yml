@@ -18,7 +18,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - portai-master-da:/data
     networks:
-      - bloomn-etword
+      - master-netwrk
 
 volumes:
   portai-master-da:

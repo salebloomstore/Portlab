@@ -1,0 +1,24 @@
+name: portai-master
+
+x-portainer-image: &portainer-image portainer/portainer-ce:2.27.9@sha256:224a378fbc5ae579dc9d570c5ca2e5e981a4a003c8d7c2c5b5e482af97c2f87c
+
+networks:
+  master-netwrk:
+    external: true
+
+services:
+  portai-master-io:
+    image: *portainer-image
+    container_name: portai-master-io
+    restart: unless-stopped
+    ports:
+      - ${PORTAI_NERGUI_EA_PORT}:8000
+      - ${PORTAI_NERGUI_UI_PORT}:9443
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portai-master-da:/data
+    networks:
+      - bloomn-etword
+
+volumes:
+  portai-master-da:

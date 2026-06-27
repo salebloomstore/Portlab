@@ -78,13 +78,7 @@ docker network create master-netwrk
 sudo chown 1000:1000 -R . && sudo chmod 777 -R .
 ```
 
-### 1. Remove old containers
-
-```bash
-docker compose down -v --remove-orphans
-```
-
-### 2. Build & Start
+### 1. Build & Start
 
 #### Please configure .env.example before running
 
@@ -95,5 +89,5 @@ cp .env.example .env
 #### Or configure .env before running
 
 ```bash
-docker compose up -d --build --force-recreate
+chmod +x driver/reboot/master.sh && sudo ./driver/reboot/master.sh
 ```

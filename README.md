@@ -1,8 +1,8 @@
 # 🍃 MongoDB Cluster System (MongoDB + Mongo Express + Docker)
 
 ![Portainer](https://img.shields.io/badge/Portainer-CE%202.27.9-blue)
-![Docker Engine](https://img.shields.io/badge/Docker%20Engine-29.5.2-blue)
-![Docker Compose](https://img.shields.io/badge/Docker%20Compose-v5.1.4-blue)
+![Docker Engine](https://img.shields.io/badge/Docker%20Engine-28.5.2-blue)
+![Docker Compose](https://img.shields.io/badge/Docker%20Compose-v2.40.3-blue)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 ---

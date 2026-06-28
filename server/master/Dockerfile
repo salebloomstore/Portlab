@@ -1,5 +1,1 @@
 FROM portainer/portainer-ce:2.27.9@sha256:224a378fbc5ae579dc9d570c5ca2e5e981a4a003c8d7c2c5b5e482af97c2f87c
-
-COPY entrypoint.sh /entrypoint.sh
-
-ENTRYPOINT ["/entrypoint.sh"]

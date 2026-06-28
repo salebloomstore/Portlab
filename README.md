@@ -55,7 +55,7 @@ Before running this project, please install the following tools:
 
 # 🚀 Deployment
 
-### 0. Docker empty
+### Docker empty
 
 ```bash
 docker stop $(docker ps -aq) 2>/dev/null
@@ -66,19 +66,25 @@ docker network rm $(docker network ls -q --filter type=custom) 2>/dev/null
 docker builder prune -af
 ```
 
-### 0. Create the shared Docker network if it does not already exist
+### Create the shared Docker network if it does not already exist
 
 ```bash
 docker network create master-netwrk
 ```
 
-### 0. Fix permissions
+### Fix permissions
 
 ```bash
 sudo chown 1000:1000 -R . && sudo chmod 777 -R .
 ```
 
-### 1. Build & Start
+### Grant execute permission
+
+```bash
+find . -type f -name "*.sh" -exec chmod +x {} \;
+```
+
+### Build
 
 #### Please configure .env.example before running
 

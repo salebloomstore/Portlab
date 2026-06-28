@@ -1,19 +1,20 @@
 name: portai-master
 
-x-portainer-image: &portainer-image portainer/portainer-ce:2.27.9@sha256:224a378fbc5ae579dc9d570c5ca2e5e981a4a003c8d7c2c5b5e482af97c2f87c
-
 networks:
   master-netwrk:
     external: true
 
 services:
   portai-master-io:
-    image: *portainer-image
     container_name: portai-master-io
-    restart: unless-stopped
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: ../../.env
     ports:
-      - ${PORTAI_NERGUI_EA_PORT}:8000
-      - ${PORTAI_NERGUI_UI_PORT}:9443
+      - ${PORTAI_NERGUI_EA_PORT}:${PORTAI_NERGUI_EA_PORT_OF}
+      - ${PORTAI_NERGUI_UI_PORT}:${PORTAI_NERGUI_UI_PORT_OF}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - portai-master-da:/data
